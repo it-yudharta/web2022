@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,14 @@ Route::get('/', function () {
 
 Route::get('/info', function () {
     return '(201969040099) Cahya Bagus Sanjaya';
+});
+
+Route::get('/app', function () {
+    // untuk mengakses kofigurasi
+    return config('app.name');
+});
+
+Route::get('/users', function() {
+    // Digunakan untuk Melihat Semua User yang ada di dalam database
+    return User::all();
 });

@@ -6,3 +6,12 @@
 5. Buka Terminal di menu view-> terminal (ctrl+`)
 6. Jalankan perintah `php artisan serve`
 7. Buat Route `/info` pada file `routes/web`
+
+### Materi 2
+1. Buat Database di mysql.
+2. Setting `.env` agar terhubung ke database.
+3. Menjalankan migrasi dengan `php artisan migrate`.
+4. Route untuk akses konfigurasi.
+5. Uncomment DatabaseSeeder.php baris 17 untuk membuat file dummy.
+6. jalankan `php artisan db:seed` untuk membuat record pada table users.
+7. Buat Route `/users` untuk melihat data user yang ada di database.
