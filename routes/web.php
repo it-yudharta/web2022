@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,15 @@ Route::get('/users', function() {
 Route::get('/halo/{nama?}', function($nama = 'Pengunjung') {
     return 'Halo '. $nama;
 });
+
+Route::prefix('/products', function() {
+    Route::get('/', [ProductController::class, 'index']);
+    Route::get('/create', [ProductController::class, 'create']);
+    Route::post('/', [ProductController::class, 'store']);
+    Route::get('/{product}', [ProductController::class, 'show']);
+    Route::get('/{product}/edit', [ProductController::class, 'edit']);
+    Route::put('/{product}', [ProductController::class, 'update']);
+    Route::delete('/{product}', [ProductController::class, 'destroy']);
+});
+
+// Route::resource('products', ProductController::class);
