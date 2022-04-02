@@ -31,3 +31,7 @@ Route::get('/users', function() {
     // Digunakan untuk Melihat Semua User yang ada di dalam database
     return User::all();
 });
+
+Route::get('/halo/{nama?}', function($nama = 'Pengunjung') {
+    return 'Halo '. $nama;
+});
